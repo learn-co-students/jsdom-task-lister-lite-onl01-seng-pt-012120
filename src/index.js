@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-});
+// });
   // your code here
   // var newTaskForm = document.getElementById("create-task-form" ).addEventListener("submit",function(e){
   //    if(!isValid){
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     e.preventDefault()
     // have the user input
     const newTask = document.querySelector("#new-task-description").value  
-    // slap it on the document
+    // return on the document
     const taskItem = document.createElement("li")
     taskItem.innerHTML += `
     <li> ${newTask} <button data-action="delete"> X </button> </li> 
