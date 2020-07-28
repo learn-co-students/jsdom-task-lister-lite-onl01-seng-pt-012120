@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //list element of the document ~My ToDos~ When the document is created it creates a new list
+  const taskList = [];
   //form element that will be listening to for the submit 
   const tf = document.querySelector('#create-task-form');
   const td = document.querySelector('#new-task-description');

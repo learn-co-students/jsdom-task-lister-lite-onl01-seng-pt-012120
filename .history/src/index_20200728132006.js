@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //list element of the document ~My ToDos~ When the document is created it creates a new list
+  const taskList = [];
   //form element that will be listening to for the submit 
   const tf = document.querySelector('#create-task-form');
   const td = document.querySelector('#new-task-description');
@@ -18,6 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (task) {
       let li = document.createElement('li')
       li.innerHTML = task + ' <button data-description=' + task + '> X </button>'
+      // taskList.push('<li>' + task + ' <button data-description='+task+'> X </button>')
+      // tasksUl.innerHTML = taskList.join("");
       tasksUl.appendChild(li)
     };
   };
