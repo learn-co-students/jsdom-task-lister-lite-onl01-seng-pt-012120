@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+  //list element of the document ~My ToDos~ When the document is created it creates a new list
+  const taskList = [];
   //form element that will be listening to for the submit 
   const tf = document.querySelector('#create-task-form');
   const td = document.querySelector('#new-task-description');
@@ -9,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /// cancel submit and get new task send it to function to add a list item
   tf.addEventListener('submit',  (e) => {
     e.preventDefault();
+    debugger;
     addToDoTask(td.value);
     e.target.reset();
   });
@@ -16,17 +19,18 @@ document.addEventListener("DOMContentLoaded", () => {
   /// add task element ti the tasks table
   let addToDoTask = (task) => {
     if (task) {
-      let li = document.createElement('li')
-      li.innerHTML = task + ' <button data-description=' + task + '> X </button>'
-      tasksUl.appendChild(li)
+      taskList.push('<li>' + task + ' <button data-description='+task+'> X </button>')
+      tasksUl.innerHTML = taskList.join("");
     };
   };
 
   // need event listener for the new x button to check task off
   tasksUl.addEventListener('click',  (e) => {
     if (e.target.nodeName === "BUTTON") {
-      e.target.parentElement.remove();
-    };
+      debugger;
+    }
+    
+
     
   });
 
