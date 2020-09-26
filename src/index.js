@@ -23,11 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
   taskForm.addEventListener("submit", function(e) {
     e.preventDefault()
     // have the user input
-    const newTask = document.querySelector("#new-task-description").value  
+    const newTask = document.querySelector("#new-task-description").value
+    // added task duration in form after passing the lab 
+    const taskDuration = document.querySelector("#task-duration").value  
     // slap it on the document
     const taskItem = document.createElement("li")
     taskItem.innerHTML += `
-    <li> ${newTask} <button data-action="delete"> X </button> </li> 
+    <li> ${newTask} - ${taskDuration} <button data-action="delete"> X </button> </li> 
     `
     taskList.appendChild(taskItem)
     taskForm.reset()
