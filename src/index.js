@@ -4,8 +4,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const main = document.querySelector("#main-content")
   console.log(main)
 
+  const idForm = document.querySelector("#user-id")
+  const idDisplay = document.querySelector("#user")
+  
   const taskForm = document.querySelector("#create-task-form")
   const taskList = document.querySelector("#tasks")
+
+  // additional form added after passing the lab 
+  idForm.addEventListener("submit", function(e) {
+    e.preventDefault()
+    const userId = document.querySelector("#current-user-id").value 
+    const idItem = document.createElement("h3")
+    idDisplay.innerHTML += `${userId}`
+    idDisplay.appendChild(idItem)
+    idForm.reset()
+  })
 
   taskForm.addEventListener("submit", function(e) {
     e.preventDefault()
